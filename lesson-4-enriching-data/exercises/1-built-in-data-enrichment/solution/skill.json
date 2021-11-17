@@ -1,0 +1,23 @@
+{
+    "@odata.type": "#Microsoft.Skills.Util.ConditionalSkill",
+    "name": "House Category",
+    "description": "Categorize houses based on various conditions",
+    "context": "/document",
+    "inputs": [{
+            "name": "condition",
+            "source": "=$(/document/beds) < 3 && $(/document/baths) < 2"
+        },
+        {
+            "name": "whenTrue",
+            "source": "='Starter Home'"
+        },
+        {
+            "name": "whenFalse",
+            "source": "='Family Home'"
+        }
+    ],
+    "outputs": [{
+        "name": "output",
+        "targetName": "category"
+    }]
+}

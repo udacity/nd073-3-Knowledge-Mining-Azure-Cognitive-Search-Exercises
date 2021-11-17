@@ -1,0 +1,23 @@
+{
+    "@odata.type": "#Microsoft.Skills.Util.ConditionalSkill",
+    "name": "Mortgage Category",
+    "description": "Categorize mortgages based on loan size",
+    "context": "/document",
+    "inputs": [{
+            "name": "condition",
+            "source": "=$(/document/price) < 548250"
+        },
+        {
+            "name": "whenTrue",
+            "source": "='Conforming'"
+        },
+        {
+            "name": "whenFalse",
+            "source": "='Jumbo'"
+        }
+    ],
+    "outputs": [{
+        "name": "output",
+        "targetName": "mortgage"
+    }]
+}

@@ -1,0 +1,1 @@
+search=*&$select=price,mortgage&$filter=mortgage eq 'Jumbo'

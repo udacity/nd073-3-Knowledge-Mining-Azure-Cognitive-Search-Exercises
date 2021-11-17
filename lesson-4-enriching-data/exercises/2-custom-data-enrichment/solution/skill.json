@@ -1,0 +1,25 @@
+{
+    "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
+    "name": "Color Analyzer",
+    "description": "Analyzes the color of the images in the dataset",
+    "context": "/document",
+    "uri": "https://coloranalyzer1234.azurewebsites.net/api/AnalyzeColor",
+    "httpMethod": "POST",
+    "timeout": "PT30S",
+    "batchSize": 10,
+    "degreeOfParallelism": 1,
+    "inputs": [{
+        "name": "thumbnail",
+        "source": "/document/thumbnail"
+    }],
+    "outputs": [{
+            "name": "foreground",
+            "targetName": "foreground"
+        },
+        {
+            "name": "background",
+            "targetName": "background"
+        }
+    ],
+    "httpHeaders": {}
+}

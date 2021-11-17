@@ -1,0 +1,15 @@
+{
+    "name": "foreground",
+    "type": "Edm.String",
+    "facetable": true,
+    "filterable": true,
+    "key": false,
+    "retrievable": true,
+    "searchable": true,
+    "sortable": false,
+    "analyzer": "standard.lucene",
+    "indexAnalyzer": null,
+    "searchAnalyzer": null,
+    "synonymMaps": [],
+    "fields": []
+}
